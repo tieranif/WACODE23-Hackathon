@@ -1,0 +1,88 @@
+---
+output:
+  pdf_document: default
+header-includes:
+- \usepackage{caption}
+- \captionsetup[figure]{labelformat=empty}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  comment = "#", 
+  cache = FALSE,  
+  collapse = TRUE,
+  error = TRUE,
+  tidy.opts=list(width.cutoff=65),
+  tidy=TRUE
+)
+```
+
+**Evelyn Pan**
+
+```{r load-packages, message=FALSE}
+# first download the mowateR_0.2.tar.gz file then uncomment and run the following:
+#install.packages("mowateR_0.2.tar.gz", repos = NULL, type = "source")
+library(mowateR)
+library(lubridate)
+
+setwd("/Users/evelynpan/Desktop")
+data <- read.csv(file="WACODE23.csv",
+                 header = T, stringsAsFactors = F)
+
+data
+
+```
+```{r}
+
+# Create a vector of values
+motor <- c(0.02, 0.15)
+
+# Create a horizontal barplot with customized options
+barplot(motor,
+        names.arg = c("Vermont", "California"),
+        xlab = "State",
+        ylab = "Motor Vehicle Theft (%)",
+        main = "Least v.s. Highest Motor Vehicle Thefts (U.S)",
+        col = "cornflowerblue")
+
+```
+
+
+
+
+```{r}
+
+# Create a vector of values
+robbery <- c(0.00, 0.09)
+
+# Create a horizontal barplot with customized options
+barplot(robbery,
+        names.arg = c("Wyoming", "District of Columbia"),
+        xlab = "State",
+        ylab = "Robbery (%)",
+        main = "Least v.s. Most Robberies (U.S)",
+        col = "darkslateblue")
+
+```
+
+
+```{r}
+assault <- c(0.04, 0.04, 0.14, 0.14)
+
+# Basic scatterplot
+barplot(assault, names.arg = c("Maine", "Utah", "Massachusetts", "South Dakota"),
+     xlab = "States", ylab = "Aggravated Assaults (%)", main = "Least v.s. Highest Aggravated Assaults (U.S)", 
+     col = "cadetblue1")
+```
+
+```{r}
+larceny <- c(0.54, 0.73)
+
+# Basic scatterplot
+barplot(larceny, names.arg = c("California", "Maine"),
+     xlab = "States", ylab = "Larceny Theft (%)", main = "Least v.s. Highest Larceny Thefts (U.S)", 
+     col = "darkseagreen")
+```
+
+**Thank you**
+
